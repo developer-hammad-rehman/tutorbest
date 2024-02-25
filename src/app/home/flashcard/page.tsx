@@ -11,7 +11,7 @@ import { headers } from "next/headers";
 export default async function page() {
   const host = headers().get('host')
   async function data() {
-    const res = await fetch(`http://${host}/api/flashcard`, {
+    const res = await fetch(`https://tutorbest.vercel.app/api/flashcard`, {
       method: "POST",
       body: JSON.stringify({
         prompt:
