@@ -17,7 +17,7 @@ export async function POST(req: NextRequest) {
             content: `You Have to act like question generater which generate 20 question according to ${prompt}`,
           },
         ],
-        model: "gpt-3.5-turbo",
+        model: "gpt-4",
       });
       const response = chat.choices[0].message.content?.split('?');
       return NextResponse.json(response);

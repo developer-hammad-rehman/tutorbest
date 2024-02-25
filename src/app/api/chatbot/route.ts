@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
 import OpenAI from "openai";
-
 export async function POST(req: NextRequest) {
   try {
     const { prompt } = await req.json();
@@ -17,7 +16,7 @@ export async function POST(req: NextRequest) {
             content: `You have to Provide information related to studies according to ${prompt}`,
           },
         ],
-        model: "gpt-3.5-turbo",
+        model: "gpt-4",
       });
       const response = chat.choices[0].message.content;
       return NextResponse.json({ response: response });

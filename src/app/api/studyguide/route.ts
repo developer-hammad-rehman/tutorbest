@@ -12,7 +12,7 @@ export async function POST(req:NextRequest) {
             })
             const chat = await openai.chat.completions.create({
                 messages:[{role:'system' , content:`You are best study guider you have to generate study guide of ${prompt} make me the long guide with  heading give me this content only  in html heading tag and paragragh tag with tailwindcss style`}],
-                model:"gpt-3.5-turbo"
+                model:"gpt-4"
             })
             const response = chat.choices[0].message.content
             return NextResponse.json({response : response})
