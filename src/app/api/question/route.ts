@@ -12,7 +12,7 @@ export async function POST(request:NextRequest) {
         })
         const chat = await openai.chat.completions.create({
             messages:[{role:"system" , content:`Generate 15 multiple-choice questions in HTML and simple Tailwind CSS style in grouplist for the topic ${prompt}. Provide answer choices and highlight the correct answer for each question in green.`}],
-            model:"gpt-4"
+            model:"gpt-3.5-turbo"
         })
      const response = chat.choices[0].message.content
      return NextResponse.json({response : response})

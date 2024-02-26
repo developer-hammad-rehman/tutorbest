@@ -11,7 +11,7 @@ export async function POST(req:NextRequest) {
                 apiKey:process.env.OPEN_AI_API_KEY
             })
             const chat = await openai.chat.completions.create({
-                messages:[{role:'system' , content:`You are best study guider you have to generate study guide of ${prompt} make me the long guide with  heading give me this content only  in html heading tag and paragragh tag with tailwindcss style`}],
+                messages:[{role:'system' , content:`You are best study guider you have to generate study guide of ${prompt} make me the long guide with  heading give me this content only  in html heading tag and paragragh tag with tailwindcss style with out any background`}],
                 model:"gpt-4"
             })
             const response = chat.choices[0].message.content
