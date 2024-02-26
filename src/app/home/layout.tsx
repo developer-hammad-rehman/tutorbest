@@ -10,9 +10,7 @@ export default function layout({children}:{children:React.ReactNode}) {
        <div className='flex w-full h-screen justify-between'>
         <SideBar/>
         <div className='w-full sm:w-1/2'>
-      <Suspense fallback={<p className='flex w-full h-screen justify-center items-center text-3xl animate-spin'><Loader2 className='animate-spin'/></p>}>
       {children}
-      </Suspense>
         </div>
          <div>
          <ChatBot/>
