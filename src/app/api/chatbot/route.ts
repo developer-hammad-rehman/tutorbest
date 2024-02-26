@@ -16,7 +16,7 @@ export async function POST(req: NextRequest) {
             content: `You have to Provide information related to studies according to ${prompt}`,
           },
         ],
-        model: "gpt-4",
+        model: "gpt-3.5-turbo",
       });
       const response = chat.choices[0].message.content;
       return NextResponse.json({ response: response });
