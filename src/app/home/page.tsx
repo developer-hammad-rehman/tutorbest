@@ -1,10 +1,7 @@
-import React, { Suspense } from 'react'
-import StudyGuide from '../component/StudyGuide';
-import { Loader2 } from 'lucide-react';
-export default function Study() {
+import React from 'react'
+
+export default function page() {
   return (
-      <Suspense fallback={<p className='flex w-full h-screen justify-center items-center text-3xl animate-spin'><Loader2 className='animate-spin'/></p>}>
-        <StudyGuide/>
-      </Suspense>
+    <div>page</div>
   )
 }

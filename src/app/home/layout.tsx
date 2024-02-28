@@ -2,7 +2,7 @@ import React, { Suspense } from 'react'
 import NavBar from './component/NavBar'
 import SideBar from './component/SideBar'
 import ChatBot from './component/ChatBot'
-import { Loader2 } from 'lucide-react'
+import MessageBox from './component/MessageBox'
 export default function layout({children}:{children:React.ReactNode}) {
   return (
     <div>
@@ -14,6 +14,7 @@ export default function layout({children}:{children:React.ReactNode}) {
         </div>
          <div>
          <ChatBot/>
+         <MessageBox/>
          </div>
        </div>
     </div>

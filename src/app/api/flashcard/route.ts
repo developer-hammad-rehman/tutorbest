@@ -19,7 +19,7 @@ export async function POST(req: NextRequest) {
         ],
         model: "gpt-3.5-turbo",
       });
-      const response = chat.choices[0].message.content?.split('?');
+      const response = chat.choices[0].message.content?.split("?");
       return NextResponse.json(response);
     }
   } catch (error) {

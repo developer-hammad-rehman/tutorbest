@@ -35,7 +35,6 @@ function getParagraphs(content:any) {
   }
   return paragraphs;
 }
-
 const DocxReader = () => {
   const [paragraphs, setParagraphs] = useState([]);
   const [loading , setLoading] = useState(false)
