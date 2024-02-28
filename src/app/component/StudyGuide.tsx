@@ -2,7 +2,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { headers } from "next/headers";
 export default async function StudyGuide() {
   const host = headers().get("host");
-  const response = await fetch(`http://${host}/api/studyguide`, {
+  const response = await fetch(`https://tutorbest.vercel.app/api/studyguide`, {
     method: "POST",
     cache: "no-store",
     body: JSON.stringify({
