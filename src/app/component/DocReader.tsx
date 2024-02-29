@@ -4,7 +4,6 @@ import { RiLoader4Fill } from "react-icons/ri";
 import PizZip from "pizzip";
 import { DOMParser } from "@xmldom/xmldom";
 import { useRouter } from "next/navigation";
-
 function str2xml(str:any) {
   if (str.charCodeAt(0) === 65279) {
     // BOM sequence
@@ -54,13 +53,20 @@ const DocxReader = () => {
 
     reader.readAsBinaryString(file);
   };
-
+  async function cookie() {
+    const res = await fetch("/api/userdata", {
+      method: "POST",
+      body: JSON.stringify({ input: paragraphs.join(' ') }),
+    });
+    console.log(await res.json()); 
+  }
   return <div className="flex flex-col gap-3">
     <label htmlFor="files" className="cursor-pointer p-3 bg-gray-50 text-center">Browse File</label>
     <input type="file" onChange={onFileUpload} name="docx-reader" accept=".docx" id="files" className="hidden"/>
     <br />
     {paragraphs[0] ? <button className="bg-purple-200 p-3 flex gap-2" onClick={() =>{
-      setLoading(true)
+     cookie()
+     setLoading(true)
       setTimeout(() =>{
       push('/home')
       },1000)
