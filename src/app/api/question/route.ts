@@ -13,8 +13,8 @@ export async function POST(request: NextRequest) {
       const chat = await openai.chat.completions.create({
         messages: [
           {
-            role: "system",
-            content: `Generate 15 multiple-choice questions in HTML and simple Tailwind CSS style in grouplist for the topic ${prompt}. Provide answer choices and highlight the correct answer for each question in green give me all code at once.`,
+            role: "user",
+            content: `Generate 15 multiple-choice questions in HTML and simple Tailwind CSS style in grouplist for the topic ${prompt}. Provide answer choices and highlight the correct answer for each question in green.`,
           },
         ],
         model: "gpt-3.5-turbo",
