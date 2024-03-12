@@ -12,7 +12,7 @@ export default async function FlashCard() {
   const host = headers().get('host')
   const input = cookies().get('userdata')
   async function data() {
-    const res =  await fetch(`http://${host}/api/flashcard` ,{
+    const res =  await fetch(`https://tutorbest-one.vercel.app/api/flashcard` ,{
       method:"POST",
       cache:"no-store",
       body:JSON.stringify({prompt:input?.value})

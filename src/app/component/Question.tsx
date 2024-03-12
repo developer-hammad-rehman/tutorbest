@@ -4,7 +4,7 @@ import { ScrollArea } from '@/components/ui/scroll-area'
 export default async function Question() {
   const host = headers().get('host')
   const input = cookies().get('userdata')
-  const response = await fetch(`http://${host}/api/question` ,{
+  const response = await fetch(`https://tutorbest-one.vercel.app/api/question` ,{
     method:"POST",
     cache:"no-store",
     body:JSON.stringify({prompt:input?.value})

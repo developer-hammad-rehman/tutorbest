@@ -3,7 +3,7 @@ import { cookies, headers } from "next/headers";
 export default async function StudyGuide() {
   const host = headers().get("host");
   const input = cookies().get('userdata')
-  const response = await fetch(`http://${host}/api/studyguide`, {
+  const response = await fetch(`https://tutorbest-one.vercel.app/api/studyguide`, {
     method: "POST",
     cache: "no-store",
     body: JSON.stringify({
