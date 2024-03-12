@@ -1,13 +1,14 @@
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { cookies, headers } from "next/headers";
 export default async function StudyGuide() {
-  const input = cookies().get('userdata')
+  const input = cookies().get('userdata')?.value
   const response = await fetch(`https://tutorbest-one.vercel.app/api/studyguide`, {
     method: "POST",
     cache: "no-store",
     body: JSON.stringify({
       prompt:
-       "AI" ,
+      input
+  ,
     }),
   });
   const data = await response.json();
