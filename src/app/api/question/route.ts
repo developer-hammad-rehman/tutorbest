@@ -14,7 +14,7 @@ export async function POST(request: NextRequest) {
         messages: [
           {
             role: "system",
-            content: `Generate 15 multiple-choice questions in HTML and simple Tailwind CSS style in grouplist for the topic ${prompt}. Provide answer choices and highlight the correct answer for each question in green.`,
+            content: `Generate 15 multiple-choice questions in HTML and simple Tailwind CSS style in grouplist for the topic ${prompt}. Provide answer choices and highlight the correct answer for each question in green give me all code at once.`,
           },
         ],
         model: "gpt-3.5-turbo",
