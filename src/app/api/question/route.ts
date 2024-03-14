@@ -96,10 +96,9 @@ export async function POST(request: NextRequest) {
           },
         ],
         model: "gpt-4-0613",
-        stream:true
       });
-      const response = OpenAIStream(chat);
-      return new StreamingTextResponse(response);
+      const response = chat.choices[0].message.content;
+      return NextResponse.json({response : response});
     }
   } catch (error) {
     console.error((error as { message: string }).message);

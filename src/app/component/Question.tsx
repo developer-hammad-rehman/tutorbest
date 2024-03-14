@@ -10,8 +10,8 @@ export default async function Question() {
     cache:"no-store",
     body:JSON.stringify({prompt:input?.value})
   })
-  const data = await response.text();
-  const res : Idata[] =  eval(data);
+  const data = await response.json();
+  const res : Idata[] =  eval(data.response);
   console.log(res);
   return (
    <div className='w-full h-screen flex justify-center items-center'>
