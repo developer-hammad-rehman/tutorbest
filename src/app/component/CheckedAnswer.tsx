@@ -15,13 +15,12 @@ export default function CheckedAnswer({res} : IProps) {
             <div key={i} className='bg-gray-100 border-2 p-5'>
             <span className='text-2xl font-bold'>{val.question}</span>
             <div className='flex flex-col gap-3'>
-            {val.options.map((option) => (
-                   <label key={option}>
+            {val.options.map((option , i) => (
+                   <label key={i}>
                      <input type='radio' name={val.question} value={option} />
                      {option}
                    </label>
                  ))}
-                 {/* {value ? value == val.answer ? "Your answer is correct" : "Your are wrong":null} */}
             </div>
            </div>
         )
