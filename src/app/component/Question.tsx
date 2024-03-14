@@ -1,19 +1,22 @@
-import { cookies, headers } from 'next/headers'
+import { cookies } from 'next/headers'
 import React from 'react'
 import { ScrollArea } from '@/components/ui/scroll-area'
+import { Idata } from '../utilts'
+import CheckedAnswer from './CheckedAnswer'
 export default async function Question() {
-  const host = headers().get('host')
   const input = cookies().get('userdata')
-  const response = await fetch(`https://tutorbest-one.vercel.app/api/question` ,{
+  const response = await fetch(`${process.env.APP_URL}/api/question` ,{
     method:"POST",
     cache:"no-store",
     body:JSON.stringify({prompt:input?.value})
   })
-  const data = await response.json() 
+  const data = await response.text();
+  const res : Idata[] =  eval(data);
+  console.log(res);
   return (
    <div className='w-full h-screen flex justify-center items-center'>
     <ScrollArea className='w-[300px] lg:w-[500px] h-[300px] flex justify-center items-center'>
-     <div dangerouslySetInnerHTML={{__html:data.response}}></div>
+  <CheckedAnswer res={res}/>
    </ScrollArea>
    </div>
   )

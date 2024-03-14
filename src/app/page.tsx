@@ -19,6 +19,7 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { PackageOpen } from "lucide-react";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { useRouter } from "next/navigation";
 interface Idata {
   input: string;
 }
@@ -29,6 +30,7 @@ export default function Home() {
     handleSubmit,
     formState: { errors },
   } = useForm<Idata>();
+ const {push} = useRouter()
   const onSubmit: SubmitHandler<Idata> = async (data) => {
     reset();
     const res = await fetch("/api/userdata", {
@@ -92,7 +94,7 @@ export default function Home() {
                             maxLength 4000 characters
                           </p>
                         ))}
-                      <button className="p-4 bg-gray-50">Sumbit</button>
+                      <button className="p-4 bg-gray-50" onClick={() => push('/lesson')}>Sumbit</button>
                     </form>
                   </TabsContent>
                 </Tabs>

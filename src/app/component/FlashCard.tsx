@@ -7,11 +7,11 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { NotebookText, ThumbsDown, ThumbsUp } from "lucide-react";
-import { cookies, headers } from "next/headers";
+import { cookies } from "next/headers";
 export default async function FlashCard() {
   const input = cookies().get('userdata')
   async function data() {
-    const res =  await fetch(`https://tutorbest-one.vercel.app/api/flashcard` ,{
+    const res =  await fetch(`${process.env.APP_URL}/api/flashcard` ,{
       method:"POST",
       cache:"no-store",
       body:JSON.stringify({prompt:input?.value})

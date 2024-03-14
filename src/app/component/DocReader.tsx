@@ -68,7 +68,7 @@ const DocxReader = () => {
      cookie()
      setLoading(true)
       setTimeout(() =>{
-      push('/home')
+      push('/lesson')
       },1000)
     }}>{loading ? <RiLoader4Fill className="animate-spin text-xl"/> :null}Generate Guide</button> : null}
   </div>;
