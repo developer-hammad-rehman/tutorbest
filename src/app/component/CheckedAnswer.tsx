@@ -26,8 +26,8 @@ export default function CheckedAnswer({res} : IProps) {
         )
       }else{
         return (
-           <div  className='bg-gray-100 border-2 p-5 font-bold' key={i}>
-            Answer : {val.answer}
+           <div  className='bg-green-100 border-2 p-5 font-bold' key={i}>
+          Correct Answers : {val.answer}
            </div> 
         )
       }

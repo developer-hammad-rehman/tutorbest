@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import OpenAI from "openai";
-import {OpenAIStream , StreamingTextResponse} from "ai"
+export const  maxDuration = 300 
 export async function POST(request: NextRequest) {
   try {
     const { prompt } = await request.json();
@@ -95,7 +95,7 @@ export async function POST(request: NextRequest) {
             `,
           },
         ],
-        model: "gpt-4-0613",
+        model: "gpt-4",
       });
       const response = chat.choices[0].message.content;
       return NextResponse.json({response : response});

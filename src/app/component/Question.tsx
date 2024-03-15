@@ -5,7 +5,7 @@ import { Idata } from '../utilts'
 import CheckedAnswer from './CheckedAnswer'
 export default async function Question() {
   const input = cookies().get('userdata')
-  const response = await fetch(`${process.env.APP_URL}/api/question` ,{
+  const response = await fetch(`${process.env.LOCAL_URL}/api/question` ,{
     method:"POST",
     cache:"no-store",
     body:JSON.stringify({prompt:input?.value})
