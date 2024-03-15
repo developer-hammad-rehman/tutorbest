@@ -98,7 +98,13 @@ export default async function Question() {
     model: "gpt-4-0613",
   });
   const response = chat.choices[0].message.content as string;
-  const res : Idata[] =  eval(response);
+  const res : Idata[] =  [
+    {
+      question:"Hello",
+      options:["hello"],
+      answer:'hello'
+    }
+  ]
   console.log(res);
   return (
    <div className='w-full h-screen flex justify-center items-center'>
