@@ -14,7 +14,7 @@ export default async function Question() {
     messages: [
       {
         role: "system",
-        content: `Generate 15 multiple-choice  questions for the topic ${input}. in array for example you can take this and generete me this on this structure
+        content: `Generate 5 multiple-choice  questions for the topic ${input}. in array for example you can take this and generete me this on this structure
         [
           {
               question: "Which mountain range dominates the northern region of Pakistan?",
@@ -98,17 +98,7 @@ export default async function Question() {
     model: "gpt-4-0613",
   });
   const response = chat.choices[0].message.content as string;
-  const res : Idata[] =  [
-    {
-      question:"Hello",
-      options:["hello"],
-      answer:'hello'
-    },{
-      question:"Hello",
-      options:["hello"],
-      answer:'hello'
-    }
-  ]
+  const res : Idata[] =  eval(response);
   console.log(res);
   return (
    <div className='w-full h-screen flex justify-center items-center'>
