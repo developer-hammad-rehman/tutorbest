@@ -103,6 +103,10 @@ export default async function Question() {
       question:"Hello",
       options:["hello"],
       answer:'hello'
+    },{
+      question:"Hello",
+      options:["hello"],
+      answer:'hello'
     }
   ]
   console.log(res);
