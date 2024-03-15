@@ -3,6 +3,7 @@ import React from 'react'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { Idata } from '../utilts'
 import CheckedAnswer from './CheckedAnswer'
+export const  maxDuration = 300 
 export default async function Question() {
   const input = cookies().get('userdata')
   const response = await fetch(`${process.env.APP_URL}/api/question` ,{
