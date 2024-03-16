@@ -4,7 +4,7 @@ import { ScrollArea } from '@/components/ui/scroll-area'
 import { Idata } from '../utilts'
 import CheckedAnswer from './CheckedAnswer'
 import OpenAI from 'openai'
-export const  maxDuration = 300 
+// export const  maxDuration = 300 
 export default async function Question() {
   const input = cookies().get('userdata')?.value
   const openai = new OpenAI({
@@ -102,7 +102,7 @@ export default async function Question() {
   console.log(res);
   return (
    <div className='w-full h-screen flex justify-center items-center'>
-    <ScrollArea className='w-[300px] lg:w-[500px] h-[300px] flex justify-center items-center'>
+    <ScrollArea className='w-[300px] lg:w-[500px] h-[200px] flex justify-center items-center'>
   <CheckedAnswer res={res}/>
    </ScrollArea>
    </div>
