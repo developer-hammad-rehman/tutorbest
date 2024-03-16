@@ -102,7 +102,7 @@ export default async function Question() {
   console.log(res);
   return (
    <div className='w-full h-screen flex justify-center items-center'>
-    <ScrollArea className='w-[300px] lg:w-[500px] h-[200px] flex justify-center items-center'>
+    <ScrollArea className='w-[300px] lg:w-[500px] h-[400px] flex justify-center items-center overflow-auto'>
   <CheckedAnswer res={res}/>
    </ScrollArea>
    </div>
