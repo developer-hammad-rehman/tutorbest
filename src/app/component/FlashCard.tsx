@@ -11,7 +11,7 @@ import { cookies } from "next/headers";
 export default async function FlashCard() {
   const input = cookies().get('userdata')
   async function data() {
-    const res =  await fetch(`${process.env.APP_URL}/api/flashcard` ,{
+    const res =  await fetch(`https://tutorbest-ten.vercel.app/api/flashcard` ,{
       method:"POST",
       cache:"no-store",
       body:JSON.stringify({prompt:input?.value})
